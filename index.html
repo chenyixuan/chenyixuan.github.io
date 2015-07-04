@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    .sec1 {z-index: 1;overflow: scroll;position: absolute;top: 0;right: 0;bottom: 0;left: 0;background: white;}
+    .sec1 .btn {position: absolute;left: 50%;top: 50%;margin: -30px 0 0 -50px;}
+
+    .sec2 {z-index: 2;overflow: scroll;position: absolute;top: 0;right: 0;bottom: 0;left: 0;background: white;}
+    .sec2 .bg-danger {position:absolute; top: 66px; left: 15px;right: 15px;bottom: 10px;-webkit-writing-mode: vertical-rl;writing-mode: tb-rl;}
+    .sec2 .bg-danger p {margin: 10%;letter-spacing: 10px;font-size: 16px;}
+    </style>
+  </head>
+  <body>
+
+    <section class="sec1">
+        <a class="btn btn-default btn-lg" id="btn-lottery" href="javascript:;" role="button">开始抽签</a>
+    </section>
+
+    <section class="sec2 container" id="result" style="display: none;">
+        <h2 class="text-center" id="result-title">薄纱衬衫</h3>
+        <div class="bg-danger">
+            <p id="result-con">七月你会有50%的机会遇到一个文艺男，投其所好，选择一件薄纱衬衫，提升你的文艺气质，让他看上你的清新。</p>
+        </div>
+    </section>
+
+    
+
+    <p class="bg-danger">七月恋爱开运单品！</p>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+ 
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $('#btn-lottery').click(function() {
+        var results = lottery.length;
+        var id = Math.floor(Math.random()*(results - 1));
+        $('#result').show();
+        $('#result-title').text(lottery[id].tit);
+        $('#result-con').text(lottery[id].con);
+    });
+
+
+    var lottery = [
+        {
+            tit  : '薄纱衬衫',
+            con  : '七月你会有50%的机会遇到一个文艺男，投其所好，选择一件薄纱衬衫，提升你的文艺气质，让他看上你的清新。'
+        },
+        {
+            tit  : '高跟鞋',
+            con  : '七月你会有70%的机会遇到你那个高高的他，穿上一双高跟鞋，拉长身材比例，同时在身高上靠近跟他的距离'
+        },
+        {
+            tit  : '牛仔短裙',
+            con  : '七月你会有80%的机会遇到一个处女座男生，尽管他很“处女座”，但是选择牛仔短裙这种百搭单品，永远不怕在他面前出错。'
+        },
+        {
+            tit  : '图案T恤',
+            con  : '七月你会有60%的机会遇到一个童心未泯的大男孩，他最喜欢的就是数不尽的图案T，你可以选择可爱的图案吸引他的注意，知道他最喜欢哪部卡通吗？选择那个卡通人物准没错，你清清爽爽的模样在热辣的夏天特别养眼。'
+        },
+        {
+            tit  : '一字肩上衣',
+            con  : '七月你会有80%的机会遇到一个大男子主义的他，穿上一件一字肩，小露性感，让他感受你的女生魅力！'
+        },
+        {
+            tit  : '泳衣',
+            con  : '七月你会有90%的机会遇到一个运动男，碰上这样酷爱游泳的他，你当然要准备好“战衣”，随时准备好他邀你游泳！陪他做他喜欢的事情很重要！'
+        },
+        {
+            tit  : '运动球衣',
+            con  : '七月你会有80%的机会遇到一个运动男，七月份的酷暑，球场上热汗淋漓，记得穿好你的球衣，带上他爱喝的饮料在球场边为他加油哦～'
+        },
+        {
+            tit  : '大框眼镜',
+            con  : '七月你会有60%的机会遇到一个学霸男，在图书馆戴上一副大框眼镜邂逅你的他，学究的模样呆呆萌萌，是不是正合他的胃口呢？'
+        },
+        {
+            tit  : '发带',
+            con  : '七月你会有50%的机会遇到你的那个他。选择一款好看的发带，清清爽爽的马尾造型在夏天最养眼，而且小那偷偷告诉你：男生都迷恋马尾女生！'
+        },
+        {
+            tit  : '运动鞋',
+            con  : '七月你会有90%的机会遇到一个运动狂男生，每天的田径场是他必去的地方，穿上最舒适的运动鞋，用力跑，身材好了，心情美了，他来了'
+        },
+        {
+            tit  : 'A字裙',
+            con  : '七月你会有70%的机会遇到你的那位白马王子，选择优雅的A字裙，他看见你的美，而且记住一点：自信是最好的化妆品，自信的女生散发的魅力最迷人。'
+        },
+        {
+            tit  : '百褶短裙',
+            con  : '七月你会有80%的机会遇到一个文艺男，随风旋转百褶的飞舞就像跟他相遇的心情一样～'
+        },
+        {
+            tit  : '阔腿九分裤',
+            con  : '七月你会有70%的机会遇到一个哈韩的男生，而打扮最入时的你，当然要用像阔腿裤这样最in的单品征服他。'
+        },
+        {
+            tit  : '棒球帽',
+            con  : '七月你会有80%的机会遇到你的男孩，戴上棒球帽的你，有一股假小子的帅气，做人群中最与众不同的你，告诉他你在这里。'
+        },
+        {
+            tit  : '太阳眼镜',
+            con  : '七月你会有70%的机会遇到他，不要再紧张害怕，戴上酷酷的太阳眼镜，装扮自己的慌张，下次遇到他勇敢say hi！'
+        }
+    ]
+    </script>
+  </body>
+</html>
