@@ -20,9 +20,14 @@
     .sec1 {z-index: 1;overflow: scroll;position: absolute;top: 0;right: 0;bottom: 0;left: 0;background: white;}
     .sec1 .btn {position: absolute;left: 50%;top: 50%;margin: -30px 0 0 -50px;}
 
-    .sec2 {z-index: 2;overflow: scroll;position: absolute;top: 0;right: 0;bottom: 0;left: 0;background: white;}
-    .sec2 .bg-danger {position:absolute; top: 66px; left: 15px;right: 15px;bottom: 10px;}
-    .sec2 .bg-danger p {margin: 10%;letter-spacing: 10px;font-size: 16px;}
+    .sec2 {z-index: 2;position: absolute;top: 0;right: 0;bottom: 0;left: 0;background: white;}
+    .sec2 .con p {float: right;margin: 10%;padding-right: 15px;font-size: 16px;}
+    .vertical {
+        -webkit-writing-mode: vertical-rl; /* for browsers of webkit engine */
+　　    writing-mode: tb-rl; /* for ie */  
+    }
+
+    .sec2 .con .pic {margin: 0 auto;display: block;width: 70%;}
     </style>
   </head>
   <body>
@@ -33,8 +38,9 @@
 
     <section class="sec2 container" id="result" style="display: none;">
         <h2 class="text-center" id="result-title">薄纱衬衫</h3>
-        <div class="bg-danger">
+        <div class="con">
             <p id="result-con">七月你会有50%的机会遇到一个文艺男，投其所好，选择一件薄纱衬衫，提升你的文艺气质，让他看上你的清新。</p>
+            <img class="pic" id="result-img" src=""/>
         </div>
     </section>
 
@@ -56,6 +62,7 @@
         $('#result').show();
         $('#result-title').text(lottery[id].tit);
         $('#result-con').text(lottery[id].con);
+        $('#result-img').attr('src', '/pic/' + lottery[id].tit + '.jpg');
     });
 
 
@@ -109,7 +116,7 @@
             con  : '七月你会有80%的机会遇到一个文艺男，随风旋转百褶的飞舞就像跟他相遇的心情一样～'
         },
         {
-            tit  : '阔腿九分裤',
+            tit  : '阔腿分裤',
             con  : '七月你会有70%的机会遇到一个哈韩的男生，而打扮最入时的你，当然要用像阔腿裤这样最in的单品征服他。'
         },
         {
